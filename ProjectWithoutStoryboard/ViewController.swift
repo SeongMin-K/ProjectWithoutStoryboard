@@ -12,6 +12,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        print(#fileID, #function, "called")
+        
+        self.title = "ViewController No Storyboard - Swift"
+        self.view.backgroundColor = .green
     }
 
 
