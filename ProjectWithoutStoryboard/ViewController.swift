@@ -21,7 +21,25 @@ class ViewController: UIViewController {
         
         print(#fileID, #function, "called")
         
-        self.title = "ViewController No Storyboard - Swift"
+        self.title = "Home"
+        self.view.backgroundColor = .yellow
+        
+        // 네비게이션 아이템 추가
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.fill"), style: .plain, target: self, action: #selector(toProfileVC))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "message.fill"), style: .plain, target: self, action: #selector(toMessageVC))
+    }
+    
+    @objc fileprivate func toProfileVC() {
+        print(#fileID, #function, "called")
+        let profileVC = ProfileViewController()
+        self.navigationController?.pushViewController(profileVC, animated: true)
+    }
+    
+    @objc fileprivate func toMessageVC() {
+        print(#fileID, #function, "called")
+        let messageVC = MessageViewController()
+        self.navigationController?.pushViewController(messageVC, animated: true)
+        
     }
 }
 
